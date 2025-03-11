@@ -1,5 +1,3 @@
-
-
 body {
     display: flex;
     justify-content: center;
@@ -11,6 +9,7 @@ body {
     background: linear-gradient(270deg, #ff69b4, #ff1493, #ff69b4, #ff1493);
     background-size: 400% 400%;
     animation: gradient 10s ease infinite;
+    position: relative; /* Añadido para posicionar el cite */
 }
 
 h1 {
@@ -47,6 +46,14 @@ h1 {
 .heart::after {
     left: 50px;
     top: 0;
+}
+
+cite {
+    position: absolute; /* Posiciona el texto en la esquina */
+    bottom: 20px; /* Distancia desde el fondo */
+    left: 20px; /* Distancia desde la izquierda */
+    color: white; /* Color del texto */
+    font-size: 1.5em; /* Tamaño del texto */
 }
 
 @keyframes rotate {

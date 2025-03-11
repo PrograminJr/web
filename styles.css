@@ -9,7 +9,7 @@ body {
     background: linear-gradient(270deg, #ff69b4, #ff1493, #ff69b4, #ff1493);
     background-size: 400% 400%;
     animation: gradient 10s ease infinite;
-    position: relative; /* Añadido para posicionar el cite */
+    position: relative; /* Añadido para posicionar los corazones */
 }
 
 h1 {
@@ -18,34 +18,11 @@ h1 {
     animation: fadeInOut 2s infinite; /* Cambia la animación aquí */
 }
 
-.heart {
-    width: 100px;
-    height: 100px;
-    background-color: #ff69b4;
-    position: relative;
-    margin: 20px auto;
-    animation: rotate 2s infinite linear;
-    transform: rotate(45deg);
-}
-
-.heart::before,
-.heart::after {
-    content: '';
-    width: 100px;
-    height: 100px;
-    background-color: #ff69b4;
-    border-radius: 50%;
-    position: absolute;
-}
-
-.heart::before {
-    top: -50px;
-    left: 0;
-}
-
-.heart::after {
-    left: 50px;
-    top: 0;
+p {
+    font-size: 1.2em; /* Tamaño del texto */
+    color: white; /* Color del texto */
+    margin: 10px 0; /* Espaciado alrededor del párrafo */
+    animation: fadeInOut 2s infinite; /* Añadido para hacer el texto intermitente */
 }
 
 cite {
@@ -56,9 +33,43 @@ cite {
     font-size: 1.5em; /* Tamaño del texto */
 }
 
-@keyframes rotate {
-    0% { transform: rotate(45deg); }
-    100% { transform: rotate(405deg); }
+/* Estilos para los corazones */
+.heart {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #ff69b4;
+    transform: rotate(45deg);
+    animation: fall linear forwards;
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    width: 30px;
+    height: 30px;
+    background-color: #ff69b4;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart::before {
+    top: -15px;
+    left: 0;
+}
+
+.heart::after {
+    left: 15px;
+    top: 0;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(45deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(45deg);
+    }
 }
 
 @keyframes fadeInOut {
